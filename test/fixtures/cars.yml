@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  speed: 1
+  health: 1
+  fire_rate: 1
+
+two:
+  category: MyString
+  speed: 1
+  health: 1
+  fire_rate: 1
