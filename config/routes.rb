@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :cars, only: [:index, :update]
-      resources :users, only: [:index,:update]
+      resources :users
       resources :games, only: [:index,:update]
     end
   end
