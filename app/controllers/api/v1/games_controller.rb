@@ -1,5 +1,6 @@
 class Api::V1::GamesController < ApplicationController
   before_action :find_game, only: [:update]
+
   def index
     @game= Game.all
     render json: @game
@@ -14,10 +15,15 @@ class Api::V1::GamesController < ApplicationController
     end
   end
 
+  def create
+    @game = Game.create(games_params)
+    render json: @game, status: :ok
+  end
+
   private
 
   def games_params
-    params.permit(:user,:car,:score)
+    params.permit(:user_id, :car_id, :score)
   end
 
   def find_game
