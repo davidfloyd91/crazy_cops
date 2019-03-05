@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :cars, only: [:index, :update]
       resources :users
-      resources :games, only: [:index,:update]
+      resources :games
     end
   end
 end

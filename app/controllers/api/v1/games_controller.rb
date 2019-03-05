@@ -5,6 +5,11 @@ class Api::V1::GamesController < ApplicationController
     render json: @game
   end
 
+  def create
+    @game = Game.create(games_params)
+    render json: @game,status: :ok
+  end
+
   def update
     @game.update(game_params)
     if @game.save
@@ -17,7 +22,7 @@ class Api::V1::GamesController < ApplicationController
   private
 
   def games_params
-    params.permit(:user,:car,:score)
+    params.permit(:user_id,:car_id,:score)
   end
 
   def find_game
