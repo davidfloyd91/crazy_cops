@@ -3,7 +3,8 @@ class Api::V1::GamesController < ApplicationController
 
   def index
     @game= Game.all
-    render json: @game
+
+    render json: @game, :include => :user
   end
 
   def create
