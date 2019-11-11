@@ -9,6 +9,10 @@ class Api::V1::UsersController < ApplicationController
     render json: @user, status: :ok
   end
 
+  def show
+    render json: find_user,status: :ok
+  end
+
   def update
     @user.update(user_params)
     if @user.save
