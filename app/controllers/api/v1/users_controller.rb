@@ -18,6 +18,10 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def show
+    render json: find_user, status: :ok
+  end
+
   private
 
   def users_params
